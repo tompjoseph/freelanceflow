@@ -86,9 +86,7 @@ export default function Profile() {
     }
   };
 
-  const picUrl = profilePic
-    ? `http://localhost:5000${profilePic}`
-    : null;
+  const picUrl = profilePic || null;
 
   const displayNameValue = displayName || user?.name;
   const usernameValue = username ? `@${username}` : '';

@@ -56,7 +56,7 @@ export default function Navbar() {
               className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all"
             >
               {user?.profilePic ? (
-                <img src={`http://localhost:5000${user.profilePic}`} alt="" className="w-7 h-7 rounded-full object-cover" />
+                <img src={user.profilePic} alt="" className="w-7 h-7 rounded-full object-cover" />
               ) : (
                 <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary-400 to-purple-600 flex items-center justify-center">
                   <span className="text-xs font-bold text-white">
@@ -108,7 +108,7 @@ export default function Navbar() {
               className="flex items-center gap-2.5"
             >
               {user?.profilePic ? (
-                <img src={`http://localhost:5000${user.profilePic}`} alt="" className="w-7 h-7 rounded-full object-cover" />
+                <img src={user.profilePic} alt="" className="w-7 h-7 rounded-full object-cover" />
               ) : (
                 <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary-400 to-purple-600 flex items-center justify-center">
                   <span className="text-xs font-bold text-white">
