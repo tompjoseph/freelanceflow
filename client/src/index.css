@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 bg-surface text-gray-100 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-800;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-700;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/[0.06] bg-surface-50/80 backdrop-blur-sm;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:border-primary-500/30 hover:shadow-lg hover:shadow-primary-500/5 hover:-translate-y-0.5;
+  }
+
+  .card-gradient {
+    @apply rounded-2xl bg-gradient-to-br from-surface-50 to-surface-100 border border-white/[0.06];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white
+           placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50
+           focus:border-primary-500/50 transition-all duration-200;
+  }
+
+  select.input-field,
+  .input-field select {
+    @apply appearance-none;
+    color-scheme: dark;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+  }
+
+  select.input-field option {
+    @apply bg-surface text-gray-100 py-2 px-3;
+  }
+
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-primary-500
+           hover:from-primary-500 hover:to-primary-400 text-white font-medium
+           px-6 py-3 rounded-xl transition-all duration-200
+           shadow-lg shadow-primary-500/20 hover:shadow-primary-500/30
+           active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply flex items-center gap-2 text-gray-400 hover:text-white px-4 py-2.5
+           rounded-xl hover:bg-white/5 transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply flex items-center gap-2 text-red-400 hover:text-red-300 px-4 py-2.5
+           rounded-xl hover:bg-red-500/10 transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-active {
+    @apply badge bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+  }
+
+  .badge-completed {
+    @apply badge bg-blue-500/10 text-blue-400 border border-blue-500/20;
+  }
+
+  .badge-on-hold {
+    @apply badge bg-amber-500/10 text-amber-400 border border-amber-500/20;
+  }
+
+  .badge-paid {
+    @apply badge bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+  }
+
+  .badge-pending {
+    @apply badge bg-amber-500/10 text-amber-400 border border-amber-500/20;
+  }
+
+  .badge-overdue {
+    @apply badge bg-red-500/10 text-red-400 border border-red-500/20;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-xl bg-white/5;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in;
+  }
+
+  .page-header {
+    @apply flex items-center justify-between mb-8;
+  }
+
+  .page-title {
+    @apply text-2xl sm:text-3xl font-bold text-white tracking-tight;
+  }
+}
